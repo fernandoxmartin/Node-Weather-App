@@ -1,236 +1,203 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 body {
-    background: linear-gradient(rgba(25, 220, 255, 0.89), rgb(170, 242, 255));
-    height: 100vh;
+  background: url("./img/photo-1504608524841-42fe6f032b4b.jfif") no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-h1 { 
-    font-size: 90px;
-}
-
-h3 {
-    padding-top: 40px;
-}
-
-.header {
-    padding: 20px;
-}
-
-.search {
-    background: transparent;
-    border: none;
-    width: 22vw;
-    border-bottom: 2px solid #000000;
-    padding-bottom: 10px;
-    font-size: 20px;
-}
-
-#button {
-    visibility: hidden;
-}
-
-.error {
-    color: red;
-    text-align: center;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 /*----------------------------------------------------------*/
 
-.topContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 40%;
-    padding-top: 40px;
+.left {
+  color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 2px 2px 6px #000000;
 }
 
-.city {
-    font-weight: bold;
-    font-size: 20px;
+.leftContainer {
+  height: 70%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/*----------------------------------------------------------*/
-
-.midContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 40%;
-    padding-top: 20px;
+.left h1 {
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
-
-.temperature {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.main-info {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
 }
 
 .temp {
-    font-weight: bolder;
-    font-size: 70px;
+  font-weight: bolder;
+  font-size: 150px;
+  word-spacing: -40px;
 }
 
 .deg {
-    position: relative;
-    bottom: 20px;
-    font-size: 20px;
+  position: relative;
+  bottom: 20px;
+  font-size: 80px;
 }
 
-.details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.description::first-letter{
-    text-transform: uppercase;
+.city {
+  font-weight: bold;
+  font-size: 70px;
 }
 
-.hour {
-    font-size: 25px;
-    font-weight: bold;
-    padding-right: 5px;
+.current {
+  align-self: flex-start;
 }
-
 
 /*----------------------------------------------------------*/
 
-
-.forecast{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 50px;
-    width: 40%;
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(22, 72, 92, 0.6);
+  color: white;
 }
 
-.hour-time {
-    font-size: 12px;
-    text-align: center;
+.header {
+  padding: 20px;
+  width: 90%;
 }
 
-.hour-temp {
-    font-size: 25px;
-    font-weight: bolder;
-    text-align: center;
+.search {
+  background: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
 }
 
+#button {
+  visibility: hidden;
+}
 
+.error {
+  color: red;
+  text-align: center;
+}
 
+.rightnow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.weather-details {
+  text-align: center;
+}
+
+.description {
+  text-transform: uppercase;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Oswald";
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  font-family: "Oswald";
+}
 
 /*-----------------------------------------------------------*/
 
 @media screen and (max-width: 1250px) {
-    
-    .search {
-        width: 45vw;
-    }
-
-    .topContainer, .midContainer {
-        width: 70%;
-    }
-
-    .forecast {
-        width: 50%;
-    }
+  .temp {
+    font-size: 120px;
+    word-spacing: -30px;
+  }
 }
 
+@media screen and (max-width: 900px) {
+  .city {
+    font-size: 40px;
+  }
 
+  .temp {
+    word-spacing: -40px;
+  }
 
-@media screen and (max-width: 800px) {
-    
-    .search {
-        width: 60vw;
-    }
-
-    .topContainer, .midContainer {
-        width: 80%;
-    }
-
-    .forecast {
-        width: 60%;
-    }
+  .main-info {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    height: 100%;
+  }
 
-@media screen and (max-width: 500px) {
-    
-    h1 {
-        font-size: 60px;
-    }
+  .header {
+    width: 100%;
+  }
+  .left {
+    height: 80vh;
+  }
 
-    .search {
-        width: 70vw;
-        font-size: 15px;
-    }
+  .city {
+    font-size: 40px;
+  }
 
-    .topContainer, .midContainer {
-        width: 100%;
-    }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .forecast {
-        width: 100%;
-    }
+  .temp {
+    word-spacing: -40px;
+  }
 
-}
-
-@media screen and (max-width: 350px) {
-    
-    h1 {
-        font-size: 50px;
-    }
-
-    .search {
-        width: 70vw;
-        font-size: 15px;
-    }
-
-    .topContainer, .midContainer {
-        width: 100%;
-    }
-
-    .forecast {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 2000px) {
-    
-    h1 {
-        font-size: 130px;
-    }
-
-    .search {
-        width: 25vw;
-        font-size: 30px;
-    }
-
-    .topContainer, .midContainer {
-        width: 40%;
-    }
-
-    .forecast {
-        width: 60%;
-    }
+  .main-info {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

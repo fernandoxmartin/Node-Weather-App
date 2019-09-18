@@ -1,73 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>WEATHER APP</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
-    <script>const apiKey = '<%= process.env.API_ID %>'; </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>FXM WEATHER</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald|Poppins|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="title"><h1>Weather App</h1></div>
-      <div class="header">
-        <input id="input" class="search" type="text" placeholder="Search by name or zip code" />
-        <button id="button" type="button" onclick="findWeather(), findForecast()"></button>
-        <div class="error"></div>
-      </div>
-      <div class="topContainer">
-        <div class="name">
-            <span class="city"></span>, <span class="country"></span>
-        </div>
-        <div class="time">
-            <span class="hour"></span><span class="ampm"></span>
+    <main>
+      <div class="left">
+        <div class="leftContainer">
+          <h1>fxm weather</h1>
+          <div class="main-info">
+            <span class="temp"><%= weather.temp %> &deg;</span>
+            <div class="sub-info">
+              <span class="city"><%= weather.city %></span>
+              <span class="current"><%= weather.date %></span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="midContainer">
-          <div class="temperature">
-            <img class="icon"/>
-            <span class="temp"></span>
-            <span class="deg">&#8457;</span>
+      <div class="right">
+        <div class="header">
+          <form method="GET" action="/">
+            <input
+              id="input"
+              class="search"
+              type="text"
+              name="city"
+              placeholder="Search by name or zip code"
+            />
+            <button id="button" type="submit"></button>
+          </form>
+          <div class="error"></div>
+        </div>
+        <div class="rightnow">
+          <h2>Weather Details</h2>
+          <img
+            class="icon"
+            src="http://openweathermap.org/img/wn/<%= weather.icon %>@2x.png"
+            alt="weather icon"
+          />
+          <span class="description"><%= weather.desc %></span>
+        </div>
+        <div class="details">
+          <div class="info"><span>Humidity</span> <%= weather.hum %> %</div>
+          <div class="info"><span>Wind</span> <%= weather.wind %> MPH</div>
+          <div class="info"><span>Clouds</span> <%= weather.clouds %> %</div>
+          <div class="info">
+            <span>Sunrise</span> <%= weather.sunrise %> PST
           </div>
-          <div class="details">
-              <span class="description"></span>
-              <span class="humidity"></span>
-              <span class="wind"></span>
-          </div>
+          <div class="info"><span>Sunset</span> <%= weather.sunset %> PST</div>
+        </div>
       </div>
-
-      <h3>24 Hour Forecast</h3>
-      <div class="forecast">
-            <div class="hour-container">
-               <div class="hour-time hour-one-time"></div>
-               <div class="hour-temp hour-one"></div>
-            </div>
-            <div class="hour-container">
-                <div class="hour-time hour-two-time"></div>
-                <div class="hour-temp hour-two"></div>
-            </div>
-            <div class="hour-container">
-                <div class="hour-time hour-three-time"></div>
-                <div class="hour-temp hour-three"></div>
-            </div>
-            <div class="hour-container">
-                <div class="hour-time hour-four-time"></div>
-                <div class="hour-temp hour-four"></div>
-            </div>
-            <div class="hour-container">
-                <div class="hour-time hour-five-time"></div>
-                <div class="hour-temp hour-five"></div>
-            </div>
-            <div class="hour-container">
-                <div class="hour-time hour-six-time"></div>
-                <div class="hour-temp hour-six"></div>
-            </div>
-            </div>
-      </div>
-    </div>
-    <script src="weather.js"></script>
+    </main>
   </body>
 </html>
